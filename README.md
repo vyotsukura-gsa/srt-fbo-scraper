@@ -16,11 +16,10 @@ The following is a summary of the software and tools that are needed for develop
 * Python 3.6.6
 * Docker 
 * PostGreSQL 
-* SNYK 
-* GitHub 
-* Node 
+* Node (Version 16)
 * Node Package Manager 
-* Yarn 
+* Node Version Manager 
+* SNYK 
 ## Systems Access 
 Access to the following platforms will also be required for development: 
 * Cloud.gov 
