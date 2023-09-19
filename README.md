@@ -44,20 +44,16 @@ Note: the system account will require you to specify the ip address(es) from whi
 ## Set Environment Variables 
 Assuming you are using sam.gov's APIs, after you have set up your personal account, generate a public API key (this is for the [Federal Hierarchy API](https://open.gsa.gov/api/fh-public-api/)) and set it as an environment variable (locally and/or in cloud.gov) as SAM_API_KEY. 
 ## Installation
-* To get started with SRT-API, go to [GSA/srt-api](https://github.com/GSA/srt-fbo-scraper) to copy the URL for cloning the project. 
+* To get started with SRT-API, go to [GSA/srt-fbo-scraper](https://github.com/GSA/srt-fbo-scraper) to copy the URL for cloning the project. 
 * Open Terminal or use Visual Studio Code and open a terminal window. 
 * Navigate to the desired folder and clone the project. 
 * Next navigate to the bin folder that was created through the clone. 
 * Type `./dev_setup.sh` to begin installation. 
 * Note - If this script fails during execution, please refer to the manual setup guide for installing the necessary tools and packages here: [Manual Setup Guide](https://github.com/GSA/srt-fbo-scraper/blob/main/documentation/ManualSetupGuide.md).  
-* This script will install and set up much of what you need for this project: 
-    * Node Package Manager (npm) 
-    * PostgreSQL 
-    * Node Version Manager (nvm) 
-    * SNYK - log into SNYK using your GitHub account when prompted by the script 
-* This script will also create the needed local Postgres database with all of the tables required by this project, if they do not already exist. 
+* This script will install and set up much of what you need for this project, including curl and pyenv. 
+* It will also install and update all of the Node modules used in this project. 
+* This script will then create the needed local Postgres user and database with all of the tables required by this project, if they do not already exist. 
 * It will also install Node Version 16, which is required for this project. 
-* Finally it will install and update all of the Node modules used in this project. 
 ## Cloud.gov Deployment
 Build the Docker Image
 Before pushing to cloud.gov, you need to build the Docker image and push it to DockerHub. 
