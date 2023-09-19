@@ -42,24 +42,30 @@ source ~/.bashrc
 ```
 ## Install python with pyenv
 For both Mac and Ubuntu: 
+```
 pyenv install 3.6 
 pyenv global 3.6
+```
 
 ## Create the virtual environment
+```
 python -m venv <your main project folder>/venv
-
+```
 ## Source the new virtual env
+```
 source <your main project folder>/venv/bin/activate
-
+```
 ## Install requirements
+```
 pip install -r <your main project folder>/requirements.txt
-
+```
 ## Symbolic link in site packages to fbo_scraper module
+```
 cd <your main project folder>/venv/lib/python3.6/site-packages 
 ln -s <your main project folder>/fbo_scraper fbo_scraper 
 cd <your main project folder>
 pip install .
-
+```
 ## Download SRT Source Code 
 For both Mac and Ubuntu: 
 * Navigate to the desired folder to clone the srt-fbo-scraper project. 
@@ -79,7 +85,6 @@ sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO
 sudo -u postgres psql -c "ALTER USER circleci WITH Superuser;"
 sudo -u postgres psql -c "ALTER USER circleci WITH CREATEROLE;"
 sudo -u postgres psql -c "ALTER USER circleci WITH CREATEDB;"
-
 ```
 
 ## Create the SRT database
