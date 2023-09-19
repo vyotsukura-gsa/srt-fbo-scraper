@@ -43,7 +43,7 @@ Note: the system account will require you to specify the ip address(es) from whi
 ## Set Environment Variables 
 Assuming you are using sam.gov's APIs, after you have set up your personal account, generate a public API key (this is for the [Federal Hierarchy API](https://open.gsa.gov/api/fh-public-api/)) and set it as an environment variable (locally and/or in cloud.gov) as SAM_API_KEY. 
 ## Installation
-* To get started with SRT-API, go to [GSA/srt-fbo-scraper](https://github.com/GSA/srt-fbo-scraper) to copy the URL for cloning the project. 
+* To get started with the FBO scraper, go to [GSA/srt-fbo-scraper](https://github.com/GSA/srt-fbo-scraper) to copy the URL for cloning the project. 
 * Open Terminal or use Visual Studio Code and open a terminal window. 
 * Navigate to the desired folder and clone the project. 
 * Next navigate to the bin folder that was created through the clone. 
@@ -52,7 +52,6 @@ Assuming you are using sam.gov's APIs, after you have set up your personal accou
 * This script will install and set up much of what you need for this project, including curl and pyenv. 
 * It will also install and update all of the Node modules used in this project. 
 * This script will then create the needed local Postgres user and database with all of the tables required by this project, if they do not already exist. 
-* It will also install Node Version 16, which is required for this project. 
 ## Cloud.gov Deployment
 Build the Docker Image
 Before pushing to cloud.gov, you need to build the Docker image and push it to DockerHub. 
@@ -83,7 +82,7 @@ cf restage srt-fbo-scraper
 ```
 In the commands above, `<service>` is the name of a postgres service (e.g. `aws-rds shared-psql`) while `<service-tag>` is whatever you want to call this service. 
 
-Since services can sometimes take up to 60 minutes to be provisioned, we use cf create-service-key to ensure the service has been provisioned. See this for more details. 
+Since services can sometimes take up to 60 minutes to be provisioned, we use `cf create-service-key`` to ensure the service has been provisioned. See this for more details. 
 
 Every subsequent time you can merely use: 
 ```
