@@ -33,6 +33,7 @@ Access to the following platforms will also be required for development:
 * SAM_API_KEY 
 * VCAP_SERVICES
 * VCAP_APPLICATION 
+* TEST_DB_URL
 * SUPERCRONIC 
 # Setup and Deployment 
 This application is designed to work as a dockerized daemon in cloud.gov. As a cloud.gov app, it is bound with a postgres database that is provided as a brokered service. See the Cloud.gov Deployment section below if you are interested in pushing the application to cloud.gov. 
@@ -47,7 +48,8 @@ Assuming you are using sam.gov's APIs, after you have set up your personal accou
 * Open Terminal or use Visual Studio Code and open a terminal window. 
 * Navigate to the desired folder and clone the project. 
 * Next navigate to the bin folder that was created through the clone. 
-* Type `./dev_setup.sh` to begin setup 
+* Type `./dev_setup.sh` to begin installation. 
+* Note - If this script fails during execution, please refer to the manual setup guide for installing the necessary tools and packages here: [Manual Setup Guide](https://github.com/GSA/srt-fbo-scraper/blob/main/documentation/ManualSetupGuide.md).  
 * This script will install and set up much of what you need for this project: 
     * Node Package Manager (npm) 
     * PostgreSQL 
