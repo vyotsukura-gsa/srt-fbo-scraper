@@ -89,7 +89,7 @@ cf push srt-fbo-scraper --docker-image $DOCKER_USER/srt-fbo-scraper-$TARGET_SPAC
 cf bind-service srt-fbo-scraper <service-tag>  
 cf restage srt-fbo-scraper
 ```
-Above, `<<service>>` is the name of a postgres service (e.g. `aws-rds shared-psql`) while `<<service-tag>>` is whatever you want to call this service. 
+Above, `<service>` is the name of a postgres service (e.g. `aws-rds shared-psql`) while `<<service-tag>>` is whatever you want to call this service. 
 
 Since services can sometimes take up to 60 minutes to be provisioned, we use cf create-service-key to ensure the service has been provisioned. See this for more details. 
 
