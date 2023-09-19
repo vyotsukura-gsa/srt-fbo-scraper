@@ -1,12 +1,15 @@
 # Overview 
 The SRT FBO Scraper is a Python application that gathers data about Information Technology (IT) solicitations submitted by agencies around the federal government by scraping that data from the SAM.gov website. For each solicitation that is found, this application extracts the text of each document and feeds it to a supervised machine learning model in order to determine whether or not the document contains appropriate Section 508 accessibility language. 
+
 Following a service-oriented architecture, this application comprises one component of the back-end for the Solicitation Review Tool, a web application that GSA policy experts will use to review IT solicitations for Section 508 compliance; notify the owners of deficient solicitations; monitor historical changes in compliance; and validate predictions to improve the machine-learning model's performance. 
+
 This application is designed to run as a cron daemon within a Docker image on cloud.gov. Here's what happens every time the cron job is triggered: 
 1) Fetches yesterday's updated/posted solicitations from sam.gov using the Opportunity Management API, filtering for those solicitations that have an IT-related NAICS code.
 2) Uses the Federal Hierarchy API to look up canonical agency and office names. 
 3) For each solicitation, it downloads a zip archive containing all of the solicitation's relevant documents using the Opportunity Management API. 
 4) Extracts the text from each of those documents using textract. 
 5) Restructures the data and inserts it into a PostgreSQL database. 
+
 In a future release, the script will poll the database for the number of user-validated predictions on document compliance. If there's a significant increase, those newly validated documents will be sent to the machine learning component of the application to train a new and improved model. 
 # Developer Requirements 
 ## Software Components and Tools 
