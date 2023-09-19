@@ -21,7 +21,6 @@ For both Mac and Ubuntu:
 ```
 echo "Installing pyenv..."
 curl https://pyenv.run | bash
-
 ```
 
 Note: Replace `<your main project folder>` below with the actual path to the root level of your project. 
